@@ -18,7 +18,6 @@ namespace Team_Turtle.Controllers
 			var viewModel = new SignUpViewModel
 			{
 				Student = new Student(),
-				Departments = _swcDbContext.Departments.ToList(),
 				Programs = _swcDbContext.Programs.ToList()
 			};
 
@@ -48,13 +47,20 @@ namespace Team_Turtle.Controllers
 			}
 		}
 
-
-		public IActionResult Login()
+		[HttpGet]
+		public IActionResult GetLoginForm()
         {
             return View();
 
         }
 
-		private SWCDbContext _swcDbContext;
+		[HttpPost]
+        public IActionResult Login()
+        {
+            return View();
+
+        }
+
+        private SWCDbContext _swcDbContext;
 	}
 }

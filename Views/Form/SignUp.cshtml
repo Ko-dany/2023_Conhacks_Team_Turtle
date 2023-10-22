@@ -6,8 +6,7 @@
 }
 
 <h1 class="display-4 m-5 text-center">Join Us and Study With Condors!</h1>
-
-@* <form class="row g-2 m-5" asp-controller="Form" asp-action="CreateNewAccount" method="post"
+<form class="row g-2 m-5" asp-controller="Form" asp-action="CreateNewAccount" method="post"
 	  enctype="application/x-www-form-urlencoded">
 
 	<div class="col-md-6 form-group">
@@ -18,22 +17,11 @@
 	<div class="col-md-6 form-group">
 		<label asp-for="Student.Password" class="form-label">Password</label>
 		<input asp-for="Student.Password" type="password" class="form-control" id="Password">
-		<span asp-validation-for="Email" class="text-danger"></span>
+		<span asp-validation-for="Student.Password" class="text-danger"></span>
 	</div>
 	<div class="col-12 form-group">
 		<label asp-for="Student.Name" class="form-label">Name</label>
 		<input asp-for="Student.Name" type="text" class="form-control" id="Name" placeholder="Jane Doe">
-	</div>
-	<div class="col-12 form-group">
-		<label asp-for="Student.DepartmentId" class="form-label">Department</label>
-		<select asp-for="Student.DepartmentId" class="form-select" id="DepartmentId">
-			<option value="" selected>-------</option>
-			@foreach (Department d in Model.Departments)
-			{
-				<option value="@d.DepartmentId">@d.DepartmentName</option>
-			}
-			<!-- Options will be driven from the DB -->
-		</select>
 	</div>
 	<div class="col-md-6 form-group">
 		<label asp-for="Student.ProgramId" class="form-label">Program</label>
@@ -50,7 +38,7 @@
 		<label asp-for="Student.Level" class="form-label">Level</label>
 		<select asp-for="Student.Level" class="form-select" id="Level">
 			<option value="" selected>-------</option>
-			@for(int i = 1; i <= Model.Programs.Length; i++)
+			@for(int i = 1; i <= 6; i++)
 			{
 				<option value="i">i</option>
 			}
@@ -58,9 +46,9 @@
 		</select>
 	</div>
 
-	<input type="hidden" asp-for="StudentId" />
+	<input type="hidden" asp-for="Student.StudentId" />
 
 	<div class="col-md-6 mt-3 form-group">
 		<button type="submit" class="btn btn-primary">Sign Up</button>
 	</div>
-</form> *@
+</form>

@@ -12,8 +12,8 @@ using Team_Turtle.Models;
 namespace Team_Turtle.Migrations
 {
     [DbContext(typeof(SWCDbContext))]
-    [Migration("20231022183627_Initial")]
-    partial class Initial
+    [Migration("20231022195807_Inital")]
+    partial class Inital
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,29 +25,6 @@ namespace Team_Turtle.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Team_Turtle.Models.Department", b =>
-                {
-                    b.Property<int>("DepartmentId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("DepartmentId"));
-
-                    b.Property<string>("DepartmentName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("DepartmentId");
-
-                    b.ToTable("Departments");
-
-                    b.HasData(
-                        new
-                        {
-                            DepartmentId = 1,
-                            DepartmentName = "School of Applied Computer Science and Information Technology"
-                        });
-                });
-
             modelBuilder.Entity("Team_Turtle.Models.Program", b =>
                 {
                     b.Property<int>("ProgramId")
@@ -56,13 +33,7 @@ namespace Team_Turtle.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProgramId"));
 
-                    b.Property<int?>("DepartmentId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("Length")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProgramLengthLength")
                         .HasColumnType("int");
 
                     b.Property<string>("ProgramName")
@@ -70,53 +41,20 @@ namespace Team_Turtle.Migrations
 
                     b.HasKey("ProgramId");
 
-                    b.HasIndex("DepartmentId");
-
-                    b.HasIndex("ProgramLengthLength");
-
                     b.ToTable("Programs");
 
                     b.HasData(
                         new
                         {
                             ProgramId = 1,
-                            DepartmentId = 1,
                             Length = 2,
                             ProgramName = "Computer Programming"
                         },
                         new
                         {
                             ProgramId = 2,
-                            DepartmentId = 1,
                             Length = 3,
                             ProgramName = "Computer Programming and Analysis"
-                        });
-                });
-
-            modelBuilder.Entity("Team_Turtle.Models.ProgramLength", b =>
-                {
-                    b.Property<int>("Length")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Length"));
-
-                    b.HasKey("Length");
-
-                    b.ToTable("ProgramLengths");
-
-                    b.HasData(
-                        new
-                        {
-                            Length = 1
-                        },
-                        new
-                        {
-                            Length = 2
-                        },
-                        new
-                        {
-                            Length = 3
                         });
                 });
 
@@ -127,10 +65,6 @@ namespace Team_Turtle.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StudentId"));
-
-                    b.Property<int?>("DepartmentId")
-                        .IsRequired()
-                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -154,8 +88,6 @@ namespace Team_Turtle.Migrations
 
                     b.HasKey("StudentId");
 
-                    b.HasIndex("DepartmentId");
-
                     b.HasIndex("ProgramId");
 
                     b.ToTable("Students");
@@ -164,7 +96,6 @@ namespace Team_Turtle.Migrations
                         new
                         {
                             StudentId = 1,
-                            DepartmentId = 1,
                             Email = "jseo9123@conestogac.on.ca",
                             Level = 3,
                             Name = "Juhwan Seo",
@@ -173,55 +104,20 @@ namespace Team_Turtle.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Team_Turtle.Models.Program", b =>
-                {
-                    b.HasOne("Team_Turtle.Models.Department", "Department")
-                        .WithMany("Programs")
-                        .HasForeignKey("DepartmentId");
-
-                    b.HasOne("Team_Turtle.Models.ProgramLength", "ProgramLength")
-                        .WithMany("Programs")
-                        .HasForeignKey("ProgramLengthLength");
-
-                    b.Navigation("Department");
-
-                    b.Navigation("ProgramLength");
-                });
-
             modelBuilder.Entity("Team_Turtle.Models.Student", b =>
                 {
-                    b.HasOne("Team_Turtle.Models.Department", "Department")
-                        .WithMany("Students")
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Team_Turtle.Models.Program", "Program")
                         .WithMany("Students")
                         .HasForeignKey("ProgramId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Department");
-
                     b.Navigation("Program");
-                });
-
-            modelBuilder.Entity("Team_Turtle.Models.Department", b =>
-                {
-                    b.Navigation("Programs");
-
-                    b.Navigation("Students");
                 });
 
             modelBuilder.Entity("Team_Turtle.Models.Program", b =>
                 {
                     b.Navigation("Students");
-                });
-
-            modelBuilder.Entity("Team_Turtle.Models.ProgramLength", b =>
-                {
-                    b.Navigation("Programs");
                 });
 #pragma warning restore 612, 618
         }

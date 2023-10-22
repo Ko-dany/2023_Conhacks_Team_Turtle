@@ -18,9 +18,6 @@ namespace Team_Turtle.Models
         [Required(ErrorMessage = "The name value is required")]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage = "Please select your department")]
-        public int? DepartmentId { get; set; }
-
         [Required(ErrorMessage = "Please select your program")]
         public int? ProgramId { get; set; }
 
@@ -28,7 +25,6 @@ namespace Team_Turtle.Models
         public int? Level { get; set; }
 
         // Navigation properties
-        public Department? Department { get; set; }
         public Program? Program { get; set; }
     }
 }

@@ -1,18 +1,21 @@
-﻿@{
+﻿@using Team_Turtle.Models;
+
+@{
     ViewData["Title"] = "Login Page";
 }
 
 <h1 class="display-4 m-5 text-center">Welcome Back, Condors!</h1>
-<form class="row g-2 m-5">
-    <div class="col-md-12">
+<form class="row g-2 m-5" asp-controller="Form" asp-action="Login" method="post"
+      enctype="application/x-www-form-urlencoded">
+    <div class="col-md-12 form-group">
         <label for="inputEmail" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail">
+        <input for="inputEmail" type="email" class="form-control" id="inputEmail">
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12 form-group">
         <label for="inputPassword" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword">
+        <input for="inputPassword"type="password" class="form-control" id="inputPassword">
     </div>
-    <div class="col-md-6 mt-3">
+    <div class="col-md-6 mt-3 form-group">
         <button type="submit" class="btn btn-primary">Login</button>
     </div>
 </form>
