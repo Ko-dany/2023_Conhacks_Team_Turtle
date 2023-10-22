@@ -1,12 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Welcome Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4 m-5">Study With Condors!</h1>
+    <h1 class="display-4 m-5">Welcome to Study With Condors!</h1>
     <div>
-        <a>Login</a>
+        <a asp-controller="Form" asp-action="Login">Login</a>
         <span> | </span>
-        <a>Sign Up</a>
+        <a asp-controller="Form" asp-action="SignUp">Sign Up</a>
     </div>
 </div>
