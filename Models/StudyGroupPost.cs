@@ -6,7 +6,6 @@ namespace Team_Turtle.Models
     {
         [Key]
         public int PostId { get; set; }
-
         public int CreaterId { get; set; }
         public Student? Student { get; set; } 
 
