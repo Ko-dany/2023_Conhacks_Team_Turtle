@@ -1,0 +1,95 @@
+﻿@{
+    ViewData["Title"] = "Sign_Up Page";
+    /*
+     * <h1 class="display-4 m-5 text-center">Join Us and Study With Condors!</h1>
+        <form class="row g-2 m-5">
+        <div class="col-md-6">
+        <label asp-for="Email" class="form-label">Email</label>
+        <input asp-for="Email" type="email" class="form-control" id="Email">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+        <div class="col-md-6">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" type="password" class="form-control" id="Password">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+        <div class="col-12">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input asp-for="Name" type="text" class="form-control" id="Name" placeholder="Jane Doe">
+    </div>
+        <div class="col-12">
+        <label asp-for="DepartmentId" class="form-label">Department</label>
+        <select asp-for="DepartmentId" class="form-select" id="DepartmentId">
+            <option value="" selected>-------</option>
+            <option>Applied Computer Science & IT</option>
+            <!-- Options will be driven from the DB -->
+    </select>
+    </div>
+        <div class="col-md-6">
+        <label asp-for="ProgramCode" class="form-label">Program</label>
+        <select asp-for="ProgramCode" class="form-select" id="inputProgram">
+            <option value="" selected>-------</option>
+            <option>Computer Programming & Analysis</option>
+            <!-- Options will be driven from the DB -->
+    </select>
+    </div>
+        <div class="col-md-6">
+        <label asp-for="Level" class="form-label">Level</label>
+        <select asp-for="Level" class="form-select" id="Level">
+            <option value="" selected>-------</option>
+            <option>1</option>
+            <!-- Options will be driven from the DB -->
+    </select>
+    </div>
+    <input type="hidden" asp-for="StudentId" />
+    <div class="col-md-6 mt-3">
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+     </div>
+        </form>
+
+    */
+}
+
+<h1 class="display-4 m-5 text-center">Join Us and Study With Condors!</h1>
+<form class="row g-2 m-5">
+    <div class="col-md-6">
+        <label for="Email" class="form-label">Email</label>
+        <input for="Email" type="email" class="form-control" id="Email">
+    </div>
+    <div class="col-md-6">
+        <label for="Password" class="form-label">Password</label>
+        <input for="Password" type="password" class="form-control" id="Password">
+    </div>
+    <div class="col-12">
+        <label for="Name" class="form-label">Name</label>
+        <input for="Name" type="text" class="form-control" id="Name" placeholder="Jane Doe">
+    </div>
+    <div class="col-12">
+        <label for="DepartmentId" class="form-label">Department</label>
+        <select for="DepartmentId" class="form-select" id="DepartmentId">
+            <option value="" selected>-------</option>
+            <option>Applied Computer Science & IT</option>
+            <!-- Options will be driven from the DB -->
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="ProgramCode" class="form-label">Program</label>
+        <select for="ProgramCode" class="form-select" id="inputProgram">
+            <option value="" selected>-------</option>
+            <option>Computer Programming & Analysis</option>
+            <!-- Options will be driven from the DB -->
+        </select>
+    </div>
+    <div class="col-md-6">
+        <label for="Level" class="form-label">Level</label>
+        <select for="Level" class="form-select" id="Level">
+            <option value="" selected>-------</option>
+            <option>1</option>
+            <!-- Options will be driven from the DB -->
+        </select>
+    </div>
+    <input type="hidden" for="StudentId" />
+    <div class="col-md-6 mt-3">
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </div>
+</form>
