@@ -9,5 +9,9 @@ namespace Team_Turtle.Controllers
         {
             return View();
         }
+        public IActionResult Detail()
+        {
+            return View();
+        }
     }
 }
