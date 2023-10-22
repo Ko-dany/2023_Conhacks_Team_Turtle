@@ -12,7 +12,7 @@ using Team_Turtle.Models;
 namespace Team_Turtle.Migrations
 {
     [DbContext(typeof(SWCDbContext))]
-    [Migration("20231022174703_Initial")]
+    [Migration("20231022183627_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -144,6 +144,10 @@ namespace Team_Turtle.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("ProgramId")
                         .IsRequired()
                         .HasColumnType("int");
@@ -164,6 +168,7 @@ namespace Team_Turtle.Migrations
                             Email = "jseo9123@conestogac.on.ca",
                             Level = 3,
                             Name = "Juhwan Seo",
+                            Password = "12345678",
                             ProgramId = 2
                         });
                 });

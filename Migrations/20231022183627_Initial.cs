@@ -70,6 +70,7 @@ namespace Team_Turtle.Migrations
                     StudentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DepartmentId = table.Column<int>(type: "int", nullable: false),
                     ProgramId = table.Column<int>(type: "int", nullable: false),
@@ -118,8 +119,8 @@ namespace Team_Turtle.Migrations
 
             migrationBuilder.InsertData(
                 table: "Students",
-                columns: new[] { "StudentId", "DepartmentId", "Email", "Level", "Name", "ProgramId" },
-                values: new object[] { 1, 1, "jseo9123@conestogac.on.ca", 3, "Juhwan Seo", 2 });
+                columns: new[] { "StudentId", "DepartmentId", "Email", "Level", "Name", "Password", "ProgramId" },
+                values: new object[] { 1, 1, "jseo9123@conestogac.on.ca", 3, "Juhwan Seo", "12345678", 2 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Programs_DepartmentId",

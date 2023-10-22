@@ -17,7 +17,7 @@ namespace Team_Turtle.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student>().HasData(
-                new Student() { StudentId = 1, Email = "jseo9123@conestogac.on.ca", Name = "Juhwan Seo", DepartmentId = 1, ProgramId = 2, Level = 3}
+                new Student() { StudentId = 1, Email = "jseo9123@conestogac.on.ca", Password="12345678", Name = "Juhwan Seo", DepartmentId = 1, ProgramId = 2, Level = 3}
             );
 
             modelBuilder.Entity<Department>().HasData(

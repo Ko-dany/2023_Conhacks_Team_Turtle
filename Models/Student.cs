@@ -12,6 +12,9 @@ namespace Team_Turtle.Models
         [EmailValidationAttribute]
         public string? Email { get; set; }
 
+        [Required(ErrorMessage = "Please set your password")]
+        public string? Password { get; set; }
+
         [Required(ErrorMessage = "The name value is required")]
         public string? Name { get; set; }
 
